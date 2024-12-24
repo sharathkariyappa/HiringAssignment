@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function MainContent() {
+  const navigate = useNavigate()
     const students = Array(12).fill({
       name: 'Student Name',
       cohort: 'AY 2024-25',
@@ -20,7 +23,7 @@ export default function MainContent() {
                 <option>CBSE 9</option>
               </select>
             </div>
-            <button className="bg-gray-300 text-black px-6 py-3 rounded text-lg">+ Add New Student</button>
+            <button className="bg-gray-300 text-black px-6 py-3 rounded text-lg" onClick={() => navigate('/add-student')}>+ Add New Student</button>
           </div>
 
           <table className="w-full rounded shadow">

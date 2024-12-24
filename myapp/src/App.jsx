@@ -2,6 +2,8 @@ import React from 'react';
 import Sidebar from "./components/SideBar"
 import Header from './components/Header';
 import MainContent from './components/Main';
+import AddStudent from './pages/Addstudent';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (
@@ -11,7 +13,13 @@ const App = () => {
       </div>
       <div className="flex-1 bg-gray-100">
         <Header />
-        <MainContent />
+        <Router>
+          <Routes>
+            <Route path="/" element={<MainContent />} />
+            <Route path="/Add-student" element={<AddStudent />} />
+          </Routes>
+        </Router>
+        {/* <MainContent /> */}
       </div>
     </div>
   );
